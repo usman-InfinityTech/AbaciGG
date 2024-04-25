@@ -1,0 +1,104 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Get in Touch  - {{ site_settings.site_name }} {% endblock title %}
+{% block main_content %}
+
+
+    <div class="container mt-100">
+        <h1 class="h1-title">{{ contact.page_title }}</h1>
+    </div>
+    <section class="division section mt-50">
+        <div class="container">
+            <div class="page-data">
+                <section class="contact">
+                    <div class="w-layout-blockcontainer container w-container">
+                        <div class="contact-wrap">
+                            <div class="contact-left">
+                                <div class="contact-form w-form">
+                                    <form id="contact-form" name="contact-form" data-name="Contact Form"
+                                          method="get"
+                                          aria-label="Contact Form">
+                                        <div class="form-wrap">
+                                            <div>
+                                                <label for="first-name" class="field-label">First name</label><input
+                                                    class="input w-input" maxlength="256" name="First-name"
+                                                    data-name="First name" placeholder="" type="text" id="first-name"
+                                                    required="">
+                                            </div>
+                                            <div>
+                                                <label for="last-name" class="field-label">Last name</label><input
+                                                    class="input w-input" maxlength="256" name="Last-name"
+                                                    data-name="Last name" placeholder="" type="text" id="last-name"
+                                                    required="">
+                                            </div>
+                                            <div>
+                                                <label for="email" class="field-label">Email address</label><input
+                                                    class="input w-input" maxlength="256" name="Email" data-name="Email"
+                                                    placeholder="" type="email" id="email" required=""
+                                            >
+                                            </div>
+                                            <div>
+                                                <label for="phone-number" class="field-label">Phone
+                                                    number</label>
+                                                <input class="input w-input" maxlength="256"
+                                                       name="Phone-number" data-name="Phone number"
+                                                       placeholder="" type="tel" id="phone-number"
+                                                       required="">
+                                            </div>
+                                            <div id="text_area_div">
+                                                <label
+                                                        for="message" class="field-label">Write your message
+                                                    here</label>
+                                                <textarea required="" placeholder="" maxlength="5000"
+                                                          id="message" name="Message" data-name="Message"
+                                                          class="textarea w-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-btm">
+                                            <label class="w-checkbox checkbox-field">
+                                            <span class="checkbox-label w-form-label">By submitting I here by agree to the
+                                                <a href="{% url 'term_and_conditions' %}" style="">Terms &amp; Conditions</a> of Abaci</span>
+                                            </label>
+                                            <input type="submit" data-wait="" class="secondary-button w-button"
+                                                   value="Submit Now">
+                                        </div>
+                                    </form>
+                                    <div class="success-message mt-5 d-none" tabindex="-1" role="region"
+                                         aria-label="Contact Form success">
+                                        <div>Thank you! Your submission has been received!</div>
+                                    </div>
+                                    <div class="error-message w-form-fail d-none" tabindex="-1" role="region"
+                                         aria-label="Contact Form failure">
+                                        <div>Oops! Something went wrong while submitting the form.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-right"><p class="contact-text">{{ contact.page_description }}</p>
+                                <div class="contact-info">
+                                    {% if contact.location %}
+                                        <div><h5 class="contact-title">Location</h5>
+                                            <div class="address">{{ contact.location }}</div>
+                                        </div>
+                                    {% endif %}
+                                    <div>
+                                        <h5 class="contact-title">Connect with us</h5>
+                                        <div class="contact-data">
+                                            <a href="mailto:{{ contact.email_address }}"
+                                                                     class="contact-link">{{ contact.email_address }}</a>
+                                            <a href="tel:{{ contact.phone_number }}" class="contact-link">{{ contact.phone_number }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+    </section>
+{% block cta %}
+{% endblock cta %}
+
+{% endblock main_content %}

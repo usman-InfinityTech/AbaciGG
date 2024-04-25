@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} Our Services  - {{ site_settings.site_name }} {% endblock title %}
+{% block main_content %}
+
+
+    <div class="container mt-100">
+        <h1 class="h1-title">{{ service_page.page_title }}</h1>
+        <div class="col-lg-6 mt-20 ">
+            <p class="about-description">{{ service_page.page_description }}</p>
+        </div>
+
+    </div>
+
+
+
+
+    <section class="division section mt-70">
+        <div class="container">
+            <div class="row">
+                {% for service in services %}
+                    <div class="col-lg-4">
+                        <div class="service-block">
+                            <div class="service-header">
+                                <img src="{{ service.service_icon.url }}"
+                                     loading="lazy" alt="Features Icon" class="service-icon">
+                                <h5 class="service-title">{{ service.service_name }}</h5>
+                            </div>
+                            <p class="service-text">{{ service.service_description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock main_content %}

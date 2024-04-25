@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Privacy Policy  - {{ site_settings.site_name }} {% endblock title %}
+{% block main_content %}
+
+
+    <div class="container mt-100">
+        <h1 class="h1-title">{{ privacy.page_title }}</h1>
+    </div>
+    <section class="division section mt-50">
+        <div class="container">
+            <div class="row">
+                {{ privacy.content|safe }}
+            </div>
+        </div>
+    </section>
+
+{% block cta %}
+{% endblock cta %}
+{% endblock main_content %}
