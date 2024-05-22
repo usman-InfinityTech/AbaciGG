@@ -23,6 +23,7 @@ from AbaciGG import views, settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
+    path('lunacapital/', views.lunacapital, name="lunacapital"),
     path('about-us/', views.about_us, name="about_us"),
     path('services/', views.our_services, name="our_services"),
     path('terms-conditions/', views.term_and_conditions, name="term_and_conditions"),

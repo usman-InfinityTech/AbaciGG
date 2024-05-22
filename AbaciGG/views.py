@@ -66,3 +66,15 @@ def contact_us(request):
         "contact": contact
     }
     return render(request, template_name="website/contact_us.html", context=context)
+
+
+def lunacapital(request):
+    site_settings = SiteSettings.objects.first()
+    service_page = ServicesPage.objects.first()
+    services = Services.objects.all()
+    context = {
+        "site_settings": site_settings,
+        "services": services,
+        "service_page": service_page,
+    }
+    return render(request, template_name="website/lunacapital.html", context=context)
