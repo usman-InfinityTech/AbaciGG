@@ -3,6 +3,147 @@
 {% block title %} Our Services  - {{ site_settings.site_name }} {% endblock title %}
 {% block main_content %}
 
+<style>
+.section-data {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff; /* white background */
+    color: #000000; /* black text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journey-data {
+    margin-bottom: 20px;
+}
+
+.process-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+}
+
+.journey-text {
+    font-size: 16px;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #000000; /* black text */
+}
+
+.process-flow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-top: 1px solid #ccc; /* light grey border */
+}
+
+.process-step {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* light blue background */
+    color: #000000; /* white text */
+    border: 2px solid #ffffff; /* black border */
+    border-radius: 10px;
+    width: 220px;
+    box-sizing: border-box; /* ensures padding is included in width */
+    margin: 10px;
+}
+
+.process-step .step-number {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.process-step .step-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.process-step .step-description {
+    padding: 10px;
+}
+
+.step-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #00ffcc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.button-wrap {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.primary-button {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .process-step {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+}
+
+.service-block {
+    height: 300px; /* Set the desired fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Background color for better visualization */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.service-text {
+    flex-grow: 1;
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Indicate text overflow with ellipsis */
+    white-space: normal; /* Allow text wrapping */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+
+</style>
 
     <div class="container mt-100">
         <h1 class="h1-title">{{ service_page.page_title }}</h1>
@@ -17,24 +158,85 @@
 
     <section class="division section mt-70">
         <div class="container">
+            
             <div class="row">
                 {% for service in services %}
                     <div class="col-lg-4">
-                        <div class="service-block">
-                            <div class="service-header">
-                                <img src="{{ service.service_icon.url }}"
-                                     loading="lazy" alt="Features Icon" class="service-icon">
-                                <h5 class="service-title">{{ service.service_name }}</h5>
+                        <a href="{{ service.service_link }}" class="service-link">
+                            <div class="service-block">
+                                <div class="service-header">
+                                    <img src="{{ service.service_icon.url }}"
+                                         loading="lazy" alt="Features Icon" class="service-icon">
+                                    <h5 class="service-title">{{ service.service_name }}</h5>
+                                </div>
+                                <p class="service-text">{{ service.service_description }}</p>
                             </div>
-                            <p class="service-text">{{ service.service_description }}</p>
-                        </div>
+                        </a>
                     </div>
                 {% endfor %}
-
             </div>
         </div>
     </section>
+    
+
+    <div class="container mt-100">
+        <h1 class="h1-title">{{ about.page_title }}</h1>
+        <div class="col-lg-12 mt-20 ">
+            <p class="about-description">{{ about.page_description }}</p>
+        </div>
 
 
+<div class="section-data col-lg-12">
+    <div class="journey-data" style="padding-right: 20px; padding-bottom: 20px; margin-bottom: 20px;">
+        <h3 class="process-title">Project Timeline</h3>
+    </div>
+    <div class="journey-data" style="padding-left: 20px; padding-right: 20px;">
+        <div class="process-flow">
+            <div class="process-step">
+                <div class="step-number">Stage 1</div>
+                <div class="step-dot"></div>
+                <div class="step-title">Scoping</div>
+                <div class="step-description">
+                    Project requirements are documented and a process agreed
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">Stage 2</div>
+                <div class="step-dot"></div>
+                <div class="step-title">Development</div>
+                <div class="step-description">
+                    Work begins, we work closely with our clients to ensure targets are met
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">Stage 3</div>
+                <div class="step-dot"></div>
+                <div class="step-title">Launch</div>
+                <div class="step-description">
+                    After thorough testing and client satisfaction, we go live with the project
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">Stage 4</div>
+                <div class="step-dot"></div>
+                <div class="step-title">Support</div>
+                <div class="step-description">
+                    We provide ongoing support and maintenance when needed.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-wrap">
+        <a href="{% url 'our_services' %}" class="primary-button w-inline-block">
+            <div>Explore Our Services</div>
+        </a>
+    </div>
+</div>
+
+
+
+
+        </div>
+    </div>
 
 {% endblock main_content %}

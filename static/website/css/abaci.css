@@ -181,8 +181,8 @@
 }
 
 .secondary-button {
-    border: 1px solid #b9e97d;
-    background-color: #b9e97d;
+    border: 1px solid #393939;
+    background-color: #5e5e5e;
     color: #000;
     border-radius: 4px;
     justify-content: center;
@@ -767,3 +767,4 @@ input.w-button {
     z-index: 1;
     position: relative;
 }
+

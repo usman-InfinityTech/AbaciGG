@@ -29,6 +29,9 @@ urlpatterns = [
     path('terms-conditions/', views.term_and_conditions, name="term_and_conditions"),
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),
     path('contact-us/', views.contact_us, name="contact_us"),
+    path('service-detail-bi/', views.services_detail_bi, name="services_detail-bi"),
+    path('service-detail-forecasting/', views.services_detail_forecasting, name="services_detail-forecasting"),
+    path('service-detail-reporting/', views.services_detail_reporting, name="services_detail-reporting"),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

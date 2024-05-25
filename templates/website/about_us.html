@@ -3,36 +3,125 @@
 {% block title %} About Us - {{ site_settings.site_name }} {% endblock title %}
 {% block main_content %}
 
+<style>
+    /* Updates from 24-05 */
+    .section-data {
+        width: 100%;
+        padding: 20px;
+        background-color: #ffffff; /* white background */
+        color: #000000; /* black text */
+    }
+    .journey-data {
+        margin-bottom: 20px;
+    }
+    .process-title {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 0;
+    }
+    .journey-text {
+        font-size: 16px;
+        text-align: center;
+        max-width: 800px;
+        margin: 20px auto;
+        color: #000000; /* black text */
+    }
+    .process-flow {
+        display: flex;
+        flex-wrap: wrap; /* Enables wrapping */
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 20px 0;
+        border-top: 1px solid #ccc; /* light grey border */
+    }
+    .process-step {
+        text-align: center;
+        padding: 20px;
+        background-color: #3f3f3f; /* light blue background */
+        color: #ffffff; /* black text */
+        border: 2px solid #000000; /* black border */
+        border-radius: 10px;
+        width: 220px;
+        box-sizing: border-box; /* ensures padding is included in width */
+        margin: 10px; /* Adjusted margin for spacing */
+    }
+    .process-step .step-number {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .process-step .step-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .process-step .step-description {
+        padding: 10px;
+    }
+    .step-dot {
+        height: 10px;
+        width: 10px;
+        background-color: #00ffcc;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 0 10px 0;
+        margin-top: 10px;
+    }
+    .button-wrap {
+        text-align: center;
+        margin-top: 20px;
+        display: inline-block;
+        align-items: center; 
+    }
+    .primary-button {
+        background-color: #2b2b2b;
+        color: #ffffff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        display: inline-block;
+        align-items: center;
+    }
+    @media (max-width: 768px) {
+        .process-step {
+            flex: 1 1 100%; /* Full width on small screens */
+            margin: 10px 0; /* Vertical margin for spacing */
+        }
+    }
+</style>
 
-    <div class="container mt-100">
-        <h1 class="h1-title">{{ about.page_title }}</h1>
-        <div class="col-lg-6 mt-20 ">
-            <p class="about-description">{{ about.page_description }}</p>
-        </div>
-        <div class="row mt-50" style="    padding: 20px;
-    border-radius: 10px;
-    background-color: #e7f6e7;
-">
-            <div class="section-data col-lg-8">
-                <div class="journey-data">
-                    <h3 class="h3-title">Our journey at Abaci</h3>
-                    <p class="journey-text">Our journey has been marked by resilience, a thirst for knowledge, and a
-                        passion for making a positive impact.</p>
-                    <ul role="list" class="journey-info">
-                        <li class="journey-checklist">Collaborative Achievements</li>
-                        <li class="journey-checklist">Team Achievements</li>
-                        <li class="journey-checklist">Client Success Stories</li>
-                        <li class="journey-checklist">Future Aspirations</li>
-                        <li class="journey-checklist">Community Engagement</li>
-                    </ul>
-                </div>
-                <div class="button-wrap"><a href="{% url 'our_services' %}" class="btn primary-button w-inline-block">
-                    <div>Explore Services</div>
-                </a></div>
-            </div>
-        </div>
+<div class="container mt-100">
+    <h1 class="h1-title">{{ about.page_title }}</h1>
+    <div class="col-lg-12 mt-20">
+        <p class="about-description">Abaci is a business consulting company established in Guernsey, Channel Islands. 
+            We specialise in the use of technology to make day to day business easier for our clients.</p>
+        <p class="about-description">{{ about.page_description }}</p>
     </div>
 
+    <h2 class="h2-title" style="padding-top: 20px;">Experience</h2>
+    <div class="col-lg-12 mt-20">
+        
+        <p> We have worked with businesses from a variety of industries such as</p>
+        <li> <b>Service Providers:</b> Working with business administrators and accountants to help them manage their large portfolio of clients </li>
+        <li> <b>Fund Industry:</b> Working with fund administrators to develop investor reporting solutions  </li>
+        <li> <b>Banking:</b> Developing financial and non financial models to analyse potential outcomes under various changing and complex assumptions </li>
+        <li> <b>Employee Engagement:</b> Building automated analytic reports and tailored software solutions</li>
+
+        <p class="about-description" style="padding-top:10px;">Regardless of your industry, our team is highly adaptable and works closely with you to understand how you work and therefore tailor
+            our solutions towards your needs
+        </p>
+    </div>
+
+    <h2 class="h2-title" style="padding-top: 20px;">Our Purpose</h2>
+    <div class="col-lg-12 mt-20">
+        Technology is advancing rapidly and we believe that it is key to stay ahead of the curve to maintain a competitive advantage in business.
+        Our purpose is to support and advise our clients in the use of this technology be it for improving process efficiency or enhancing decision making through access to key data.
+    </div>
+
+
+</div>
 
 
 
@@ -85,6 +174,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
 

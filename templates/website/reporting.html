@@ -1,0 +1,282 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} Our Services  - {{ site_settings.site_name }} {% endblock title %}
+{% block main_content %}
+
+
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Onest', sans-serif;
+}
+
+/* Single Blog */
+.outer-blog-sec1 h1{
+    font-size: 42px;
+    line-height: 58px;
+    font-weight: 500;
+    color: black;
+}
+.outer-blog-sec1-col-1{
+    display: flex;
+    align-items: center;
+}
+.outer-blog-sec1-col-1 img{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.outer-blog-sec1-col-1 span{
+    font-size: 14px;
+    color: #333;
+}
+
+.line {
+    background-color: rgba(0, 0, 0, .2);
+    width: 1px;
+    height: auto;
+}
+.outer-blog-sec1-col-2 span{
+    font-size: 14px;
+    color:#333;
+}
+
+.outer-blog-sec1-col-2{
+    justify-content: end;
+}
+.outer-blog-sec2 img{
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.outer-blog-sec3 p{
+   font-size: 16px;
+   color: #333333;
+}
+
+.outer-blog-sec3 h2{
+ font-size: 22px;
+ font-weight: 500;
+ line-height: 42px;
+}
+
+.outer-blog-sec3 ol li{
+    padding-bottom: 25px;
+
+}
+
+.outer-blog-sec3 img{
+    width: 100%;
+}
+
+.bg-div {
+    background:#f2f4ef;
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    
+}
+
+.bg-div p{
+    font-size: 18px;
+    line-height: 31px;
+    color: black;
+    font-weight: 400;
+}
+
+.Empowerment-unleashed ul li{
+    padding-bottom: 25px;
+}
+
+.transforming img{
+    width: 100%;
+}
+
+.transforming h2{
+    font-size: 18px;
+    padding-top: 30px;
+
+}
+
+/*Similar Post */
+
+.SimilarPost h2{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 54px;
+}
+
+.card-blog span{
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+/*blog */
+.blog-content{
+  border-color: #e5e5e5;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-bottom-left-radius:10px ;
+  border-bottom-right-radius:10px;
+}
+.blog-content button{
+  box-shadow: unset;
+  border: unset;
+  background: unset;
+  font-size: 16px;
+  font-weight: 400;
+}
+.blog-img img{
+  border-top-left-radius:10px ;
+  border-top-right-radius:10px;
+}
+
+
+/* Blog Image Hover Effect */
+.image-container {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+
+.zoom-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.zoom-image:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .outer-blog-sec1 h1{
+        margin-bottom: 12px;
+        font-size: 22px;
+        line-height: 150%;
+    }
+    .outer-blog-sec1 h1 br{
+       display: none;
+    }
+
+    .outer-blog-sec1-col-2 {
+  justify-content: center;
+}
+
+.outer-blog-sec1-col-1 {
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.outer-blog-sec2 img {
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 35px;
+}
+
+.outer-blog-sec3 p {
+  font-size: 14px;
+  color: #333333;
+}
+
+.outer-blog-sec3 h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.outer-blog-sec3 ol li {
+  padding-bottom: 20px;
+  font-size: 14px;
+}
+
+.bg-div {
+  background: #f2f4ef;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.Empowerment-unleashed ul li {
+  font-size: 14px;
+}
+
+.transforming p {
+  padding-top: 10px;
+  margin-bottom: 0px
+}
+
+.outer-blog-sec1 h1 {
+  text-align: center;
+}
+      
+}
+
+.outer-blog-sec2 img {
+    width: 100%; /* Stretch the image to cover the full container width */
+    height: 100px; /* Set a fixed height to make it look like a thin banner */
+    object-fit: cover; /* Ensure the image covers the area without distorting aspect ratio */
+}
+
+</style>
+
+<section class="division section mt-70">
+    <div class="container">
+
+    <!--blog Section -->
+    <div class="container-fluid px-md-5 px-3">
+
+
+        <div class="row outer-blog-sec1 pt-md-5 pt-4">
+            <h1>Reporting Services</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 outer-blog-sec3">
+                <p class="pt-md-5 pt-md-4 pt-4">Our expert team provides comprehensive reporting services using Excel, Word, and various SaaS platforms to enhance your business's strategic decision-making processes. 
+                    We deliver tailored reporting solutions that cater to your specific business needs and requirements.
+                </p>
+                <p>
+                      We work closely with your organization to develop custom reports that present complex data in an accessible and actionable format. Our services are designed to streamline data analysis, improve transparency, and support your business's strategic goals.
+                      Let us transform your data into insightful reports that drive better business outcomes.
+                </p>
+                <h2 class="pb-3 pt-4">Reporting Services We Offer</h2>
+                <ol>
+                    <li><b>Excel Reporting:</b> Leveraging advanced Excel capabilities to create dynamic and customizable reports that provide deep insights into your business operations.</li>
+                    <li><b>Word Reports:</b> Developing comprehensive narrative reports in Microsoft Word that include detailed analysis and professional presentation.</li>
+                    <li><b>SaaS Product Reporting:</b> Utilizing top SaaS platforms to generate real-time, interactive reports that help you make informed decisions quickly.</li>
+                    <li><b>Automated Reporting Solutions:</b> Implementing automated reporting systems that save time and reduce errors, ensuring you receive timely and accurate data.</li>
+                </ol>
+                
+                <div class="row">
+                    <div class="col-md-12 outer-blog-sec2">
+                        <img src="{% static 'website/images/webp/reportingservices.webp' %}" alt="Reporting Services">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock main_content %}
