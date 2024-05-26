@@ -45,9 +45,9 @@
 .process-step {
     text-align: center;
     padding: 20px;
-    background-color: #ffffff; /* light blue background */
+    background-color: #f8f9faf; /* light blue background */
     color: #000000; /* white text */
-    border: 2px solid #ffffff; /* black border */
+    border: 2px solid #f8f9faf; /* black border */
     border-radius: 10px;
     width: 220px;
     box-sizing: border-box; /* ensures padding is included in width */
@@ -170,8 +170,12 @@
                                     <h5 class="service-title">{{ service.service_name }}</h5>
                                 </div>
                                 <p class="service-text">{{ service.service_description }}</p>
+                                <div><p class="service-text"><b>Click to See More</b></p></div>
+                                
                             </div>
+                           
                         </a>
+                       
                     </div>
                 {% endfor %}
             </div>
@@ -186,7 +190,7 @@
         </div>
 
 
-<div class="section-data col-lg-12" style="border: 1px solid #dbdbdb; border-radius: 5px;">
+<div class="section-data col-lg-12" style="border: 1px solid #dbdbdb; border-radius: 5px; background-color: #f8f9fa;">
     <div class="journey-data" style="padding-right: 20px; padding-bottom: 20px; margin-bottom: 20px;">
         <h3 class="process-title">Project Timeline</h3>
     </div>
@@ -227,8 +231,8 @@
         </div>
     </div>
     <div class="button-wrap">
-        <a href="{% url 'our_services' %}" class="primary-button w-inline-block">
-            <div>Explore Our Services</div>
+        <a href="{% url 'contact_us' %}" class="primary-button w-inline-block">
+            <div>Contact Us</div>
         </a>
     </div>
 </div>

@@ -238,6 +238,144 @@ body{
     object-fit: cover; /* Ensure the image covers the area without distorting aspect ratio */
 }
 
+.section-data {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff; /* white background */
+    color: #000000; /* black text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journey-data {
+    margin-bottom: 20px;
+}
+
+.process-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+}
+
+.journey-text {
+    font-size: 16px;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #000000; /* black text */
+}
+
+.process-flow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-top: 1px solid #ccc; /* light grey border */
+}
+
+.process-step {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9faf; /* light blue background */
+    color: #000000; /* white text */
+    border: 2px solid #f8f9faf; /* black border */
+    border-radius: 10px;
+    width: 220px;
+    box-sizing: border-box; /* ensures padding is included in width */
+    margin: 10px;
+}
+
+.process-step .step-number {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.process-step .step-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.process-step .step-description {
+    padding: 10px;
+}
+
+.step-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #00ffcc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.button-wrap {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.primary-button {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .process-step {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+}
+
+.service-block {
+    height: 300px; /* Set the desired fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Background color for better visualization */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.service-text {
+    flex-grow: 1;
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Indicate text overflow with ellipsis */
+    white-space: normal; /* Allow text wrapping */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
 </style>
 
 <section class="division section mt-70">
@@ -270,14 +408,67 @@ body{
                         financial risks and provide strategies to mitigate them, ensuring robust risk management practices.</li>
                 </ol>
                 
-                <div class="row">
-                    <div class="col-md-12 outer-blog-sec2">
-                        <img src="{% static 'website/images/webp/financialmodeling.webp' %}" alt="Financial Modeling">
-                    </div>
-                </div>
+
 
             </div>
         </div>
+
+        <div class="section-data col-lg-12" style="border: 1px solid #dbdbdb; border-radius: 5px; background-color: #f8f9fa;">
+            <div class="journey-data" style="padding-right: 20px; padding-bottom: 10px; margin-bottom: 10px;">
+                <h3 class="process-title">Example Use Case</h3>
+            </div>
+            <div class="journey-data" style="padding-left: 20px; padding-right: 20px;">
+                <div class="process-flow">
+                    <div class="process-step">
+                      
+                        <div class="step-title">Requirement</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Product Demand Model</div>
+                        <div class="step-description">
+                            Analyse the effect of pricing and other variables on product demand
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-title">Design</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Income Statement</div>
+                        <div class="step-description">
+                            Output the outcome of each scenario using an income statment pro forma
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-title">Development</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Excel Application</div>
+                        <div class="step-description">
+                           Macros are built to iterate outcomes using changing assumptions
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-title">Launch</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Training Provided</div>
+                        <div class="step-description">
+                            Training is provided on how to utilise the report and functionality
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="button-wrap">
+            <a href="{% url 'contact_us' %}" class="primary-button w-inline-block">
+                <div>Contact Us</div>
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 outer-blog-sec2">
+                <img src="{% static 'website/images/webp/financialmodeling.webp' %}" alt="Financial Modeling">
+            </div>
+        </div>
+
     </div>
 </section>
 
