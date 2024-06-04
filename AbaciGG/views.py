@@ -37,6 +37,36 @@ def our_services(request):
     }
     return render(request, template_name="website/services.html", context=context)
 
+def services_detail_bi(request):
+    site_settings = SiteSettings.objects.first()
+    service_page = ServicesPage.objects.first()
+    services = Services.objects.all()
+    context = {
+        "site_settings": site_settings,
+        "services_detail_bi": services,
+    }
+    return render(request, template_name="website/business-insights.html", context=context)
+
+def services_detail_forecasting(request):
+    site_settings = SiteSettings.objects.first()
+    service_page = ServicesPage.objects.first()
+    services = Services.objects.all()
+    context = {
+        "site_settings": site_settings,
+        "services_detail_forecasting": services,
+    }
+    return render(request, template_name="website/forecasting.html", context=context)
+
+def services_detail_reporting(request):
+    site_settings = SiteSettings.objects.first()
+    service_page = ServicesPage.objects.first()
+    services = Services.objects.all()
+    context = {
+        "site_settings": site_settings,
+        "services_detail_reporting": services,
+    }
+    return render(request, template_name="website/reporting.html", context=context)
+
 
 def term_and_conditions(request):
     site_settings = SiteSettings.objects.first()

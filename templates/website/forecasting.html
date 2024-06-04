@@ -1,0 +1,475 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} Our Services  - {{ site_settings.site_name }} {% endblock title %}
+{% block main_content %}
+
+
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Onest', sans-serif;
+}
+
+/* Single Blog */
+.outer-blog-sec1 h1{
+    font-size: 42px;
+    line-height: 58px;
+    font-weight: 500;
+    color: black;
+}
+.outer-blog-sec1-col-1{
+    display: flex;
+    align-items: center;
+}
+.outer-blog-sec1-col-1 img{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.outer-blog-sec1-col-1 span{
+    font-size: 14px;
+    color: #333;
+}
+
+.line {
+    background-color: rgba(0, 0, 0, .2);
+    width: 1px;
+    height: auto;
+}
+.outer-blog-sec1-col-2 span{
+    font-size: 14px;
+    color:#333;
+}
+
+.outer-blog-sec1-col-2{
+    justify-content: end;
+}
+.outer-blog-sec2 img{
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.outer-blog-sec3 p{
+   font-size: 16px;
+   color: #333333;
+}
+
+.outer-blog-sec3 h2{
+ font-size: 22px;
+ font-weight: 500;
+ line-height: 42px;
+}
+
+.outer-blog-sec3 ol li{
+    padding-bottom: 25px;
+
+}
+
+.outer-blog-sec3 img{
+    width: 100%;
+}
+
+.bg-div {
+    background:#f2f4ef;
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    
+}
+
+.bg-div p{
+    font-size: 18px;
+    line-height: 31px;
+    color: black;
+    font-weight: 400;
+}
+
+.Empowerment-unleashed ul li{
+    padding-bottom: 25px;
+}
+
+.transforming img{
+    width: 100%;
+}
+
+.transforming h2{
+    font-size: 18px;
+    padding-top: 30px;
+
+}
+
+/*Similar Post */
+
+.SimilarPost h2{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 54px;
+}
+
+.card-blog span{
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+/*blog */
+.blog-content{
+  border-color: #e5e5e5;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-bottom-left-radius:10px ;
+  border-bottom-right-radius:10px;
+}
+.blog-content button{
+  box-shadow: unset;
+  border: unset;
+  background: unset;
+  font-size: 16px;
+  font-weight: 400;
+}
+.blog-img img{
+  border-top-left-radius:10px ;
+  border-top-right-radius:10px;
+}
+
+
+/* Blog Image Hover Effect */
+.image-container {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+
+.zoom-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.zoom-image:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .outer-blog-sec1 h1{
+        margin-bottom: 12px;
+        font-size: 22px;
+        line-height: 150%;
+    }
+    .outer-blog-sec1 h1 br{
+       display: none;
+    }
+
+    .outer-blog-sec1-col-2 {
+  justify-content: center;
+}
+
+.outer-blog-sec1-col-1 {
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.outer-blog-sec2 img {
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 35px;
+}
+
+.outer-blog-sec3 p {
+  font-size: 14px;
+  color: #333333;
+}
+
+.outer-blog-sec3 h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.outer-blog-sec3 ol li {
+  padding-bottom: 20px;
+  font-size: 14px;
+}
+
+.bg-div {
+  background: #f2f4ef;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.Empowerment-unleashed ul li {
+  font-size: 14px;
+}
+
+.transforming p {
+  padding-top: 10px;
+  margin-bottom: 0px
+}
+
+.outer-blog-sec1 h1 {
+  text-align: center;
+}
+      
+}
+
+.outer-blog-sec2 img {
+    width: 100%; /* Stretch the image to cover the full container width */
+    height: 100px; /* Set a fixed height to make it look like a thin banner */
+    object-fit: cover; /* Ensure the image covers the area without distorting aspect ratio */
+}
+
+.section-data {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff; /* white background */
+    color: #000000; /* black text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journey-data {
+    margin-bottom: 20px;
+}
+
+.process-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+}
+
+.journey-text {
+    font-size: 16px;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #000000; /* black text */
+}
+
+.process-flow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-top: 1px solid #ccc; /* light grey border */
+}
+
+.process-step {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9faf; /* light blue background */
+    color: #000000; /* white text */
+    border: 2px solid #f8f9faf; /* black border */
+    border-radius: 10px;
+    width: 220px;
+    box-sizing: border-box; /* ensures padding is included in width */
+    margin: 10px;
+}
+
+.process-step .step-number {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.process-step .step-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.process-step .step-description {
+    padding: 10px;
+}
+
+.step-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #00ffcc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.button-wrap {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.primary-button {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .process-step {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+}
+
+.service-block {
+    height: 300px; /* Set the desired fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Background color for better visualization */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.service-text {
+    flex-grow: 1;
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Indicate text overflow with ellipsis */
+    white-space: normal; /* Allow text wrapping */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+</style>
+
+<section class="division section mt-70">
+    <div class="container">
+
+    <!--blog Section -->
+    <div class="container-fluid px-md-5 px-3">
+
+
+        <div class="row outer-blog-sec1 pt-md-5 pt-4">
+            <h1>Financial Modeling Expertise</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 outer-blog-sec3">
+                <p class="pt-md-5 pt-md-4 pt-4">We specialise in crafting detailed financial models in Excel to support businesses in forecasting financial and non-financial outcomes.
+                    We utilise our business and accounting experience to build robust models that support strategic decision-making.
+                </p>
+
+                <h2 class="pb-3 pt-4">Our Financial Modeling Services</h2>
+                <ol>
+                    <li><b>Financial Forecasts:</b> We build comprehensive forecasts which are tailored to your business. This helps predict your company's performance, 
+                        aiding in treasury management.</li>
+                    <li><b>Investment Appraisal:</b> We build spreadsheet models using investment valuation techniques such as discounted cash flow analysis to assist management in determining
+                        an investment or project's viability.</li>
+                    <li><b>Scenario Modelling:</b> Use a range of inputs that are specific to your business to iterate over a range of possible outcomes to factor in the impact of unexpected events.</li>
+                    <li><b>Budgeting </b> We build detailed budgeting spreadsheets to manage your resources more effectively, 
+                        ensuring that you meet your financial targets and business objectives.</li>
+                    <li><b>Risk Analysis:</b> We incorporate risk analysis into our financial models to identify potential 
+                        financial risks and provide strategies to mitigate them, ensuring robust risk management practices.</li>
+                </ol>
+                
+
+
+            </div>
+        </div>
+
+        <div class="section-data col-lg-12" style="border: 1px solid #dbdbdb; border-radius: 5px; background-color: #f8f9fa;">
+            <div class="journey-data" style="padding-right: 20px; padding-bottom: 10px; margin-bottom: 10px;">
+                <h3 class="process-title">Example Use Case</h3>
+            </div>
+            <div class="journey-data" style="padding-left: 20px; padding-right: 20px;">
+                <div class="process-flow">
+                    <div class="process-step">
+                      
+                        <div class="step-title">Requirement</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Product Demand Model</div>
+                        <div class="step-description">
+                            Analyse the effect of pricing and other variables on product demand
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-title">Design</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Income Statement</div>
+                        <div class="step-description">
+                            Output the outcome of each scenario using an income statment pro forma
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-title">Development</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Excel Application</div>
+                        <div class="step-description">
+                           Macros are built to iterate outcomes using changing assumptions
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-title">Launch</div>
+                        <div class="step-dot"></div>
+                        <div class="step-number">Training Provided</div>
+                        <div class="step-description">
+                            Training is provided on how to utilise the report and functionality
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="button-wrap">
+            <a href="{% url 'contact_us' %}" class="primary-button w-inline-block">
+                <div>Contact Us</div>
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 outer-blog-sec2">
+                <img src="{% static 'website/images/webp/financialmodeling.webp' %}" alt="Financial Modeling">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock main_content %}
