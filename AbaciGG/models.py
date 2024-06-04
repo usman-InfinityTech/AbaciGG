@@ -40,6 +40,7 @@ class Clients(models.Model):
 class Services(models.Model):
     service_icon = models.FileField(upload_to="images/services", null=True, blank=True)
     service_name = models.CharField(max_length=500)
+    service_detail_url = models.CharField(max_length=500, null=True, blank=True)
     service_description = models.TextField(null=True, blank=True)
 
     class Meta:
