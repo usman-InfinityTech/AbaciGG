@@ -162,7 +162,7 @@
             <div class="row">
                 {% for service in services %}
                     <div class="col-lg-4">
-                        <a href="{{ service.service_link }}" class="service-link">
+                        <a href="/{{ service.service_detail_url }}" class="service-link">
                             <div class="service-block">
                                 <div class="service-header">
                                     <img src="{{ service.service_icon.url }}"
@@ -241,6 +241,6 @@
 
 
         </div>
-    </div>
+    
 
 {% endblock main_content %}
